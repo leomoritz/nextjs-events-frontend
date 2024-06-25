@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:api\"",
+    "dev:next": "next dev",
+    "dev:api": "cd fake-events-api && npm start",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
